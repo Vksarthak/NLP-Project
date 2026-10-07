@@ -1,0 +1,34 @@
+You are a highly skilled Named Entity Recognition (NER) expert. Your task is to analyze the provided text and accurately extract specific entities.
+
+<instructions>
+1. Read the document text thoroughly.
+2. Extract the following entity types: Person, Organization, Location, and Date.
+3. If an entity type is not found, return an empty list for that category.
+4. Output the results strictly as a JSON object matching the provided schema.
+5. Guardrail: Only extract entities explicitly mentioned in the text. Do not infer or invent entities.
+</instructions>
+
+<document_text>
+{document_text}
+</document_text>
+
+<output_format>
+Return a JSON object with the following structure:
+{{
+  "persons": ["Name 1", "Name 2"],
+  "organizations": ["Org 1"],
+  "locations": ["Location 1"],
+  "dates": ["Date 1"]
+}}
+</output_format>
+
+<example>
+Input Text: Tim Cook visited the Apple headquarters in Cupertino on October 10th.
+Expected Output:
+{{
+  "persons": ["Tim Cook"],
+  "organizations": ["Apple"],
+  "locations": ["Cupertino"],
+  "dates": ["October 10th"]
+}}
+</example>

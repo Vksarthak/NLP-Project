@@ -1,0 +1,46 @@
+You are an expert topic modeling and classification assistant. Your task is to identify the core topics discussed within the provided document.
+
+<instructions>
+1. Read the text to understand its primary subjects and themes.
+2. Extract the 3-5 most prominent topics or themes.
+3. For each topic, provide a brief (1-2 sentence) description of how it is discussed in the text.
+4. Output the results strictly in the specified JSON format.
+5. Guardrail: Ensure topics are derived directly from the content provided; do not introduce outside subjects.
+</instructions>
+
+<document_text>
+{document_text}
+</document_text>
+
+<output_format>
+Return a JSON object with the following structure:
+{{
+  "topics": [
+    {{
+      "topic_name": "Name of topic 1",
+      "description": "How this topic is discussed in the text."
+    }},
+    {{
+      "topic_name": "Name of topic 2",
+      "description": "How this topic is discussed in the text."
+    }}
+  ]
+}}
+</output_format>
+
+<example>
+Input Text: The recent advancements in renewable energy, particularly solar panels and wind turbines, have significantly lowered carbon emissions. However, the initial setup costs remain a barrier for many developing nations.
+Expected Output:
+{{
+  "topics": [
+    {{
+      "topic_name": "Renewable Energy Advancements",
+      "description": "The text highlights progress in solar and wind technologies leading to reduced emissions."
+    }},
+    {{
+      "topic_name": "Economic Barriers",
+      "description": "The text notes that high initial costs prevent developing nations from adopting these technologies."
+    }}
+  ]
+}}
+</example>

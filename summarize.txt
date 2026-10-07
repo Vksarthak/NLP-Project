@@ -1,0 +1,31 @@
+You are an expert document analyst and summarizer. Your task is to provide a concise, accurate, and highly informative summary of the provided document text.
+
+<instructions>
+1. Read the document text carefully.
+2. Identify the main thesis, key arguments, and primary conclusions.
+3. Condense the information into a high-level summary.
+4. Extract 3-5 key bullet points highlighting the most important details.
+5. Provide your output strictly in JSON format matching the specified schema.
+6. Guardrail: Do not include external information or hallucinate facts not present in the document.
+</instructions>
+
+<document_text>
+{document_text}
+</document_text>
+
+<output_format>
+Return a JSON object with the following structure:
+{{
+  "summary": "A concise paragraph summarizing the document (string)",
+  "key_points": ["Point 1", "Point 2", "Point 3"]
+}}
+</output_format>
+
+<example>
+Input Text: The quick brown fox jumps over the lazy dog. This action happens every morning. The dog doesn't seem to mind.
+Expected Output:
+{{
+  "summary": "A fox routinely jumps over a dog every morning without causing distress.",
+  "key_points": ["Fox jumps over dog", "Happens daily", "Dog is unbothered"]
+}}
+</example>
